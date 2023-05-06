@@ -67,3 +67,6 @@ sudo apt-get update
 
 sudo apt-get install jenkins
 ```
+
+
+![](/images/jenkins_error.png)
