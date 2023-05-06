@@ -19,18 +19,24 @@ resource "google_compute_firewall" "firewall_rules" {
   }
 }
 ```
-Я додав це до файлу main.tf у кінці. Це правило для файрвола, яке відкриває додаткові портиє Це необхідно для ssh підключення до нашого сервера.
+Я додав це до файлу main.tf у кінці. Це правило для файрвола, яке відкриває додаткові порти. Це необхідно для ssh підключення до нашого сервера.
 
 Далі, виконуємо команду terraform apply у powerShell локально та дивимось, чи спрацювали налатуштування для файрвола.
 
 ![](/images/ssh_1.png)
 
 
+
+
 Все добре ! Як бачимо, тепер ми можемо керувати нашою віртуальною машину за допомогою ssh з'єднання.
+
+
 
 Тепер встановимо необхідні пакети для роботи. Спочатку оновимо репозиторії.
 
 ![](/images/ssh_update.png)
+
+
 
 
 Далі, встановлюємо git.
@@ -38,12 +44,17 @@ resource "google_compute_firewall" "firewall_rules" {
 ![](/images/ssh_git_install.png)
 
 
+
+
 Також, java та sdk для подальшої роботи jenkins. 
+
 ![](/images/ssh_open_jdk_install.png)
 
 
 
+
 Тепер, встановими безпосередньо Jenkins.
+
 ```
 curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee \
   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
